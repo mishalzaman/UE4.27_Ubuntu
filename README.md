@@ -1,23 +1,37 @@
 # UE4.27_Ubuntu
 
-## 1. Run the Editor
+
+# 1. Create Project
+First, launch the vanilla Editor to generate the initial .uproject file.
+
 ```
 cd /mnt/data/UE4.27/Engine/Linux/
 ./UE4Editor
 ```
 
-Create a new project
+# 2a. Build Project (CLI)
+To compile the C++ logic for the Editor, run the build script from the root of your project folder.
 
-## 2. Build it
 ```
+# Syntax: Build.sh <ProjectName>Editor Linux Development -project="<PathToUproject>"
 /mnt/data/UE4.27/Engine/Build/BatchFiles/Linux/Build.sh testcppEditor Linux Development -project="$(pwd)/testcpp.uproject"
 ```
 
-## 3. Visual Code
-Open the build options (Ctrl+Shift+B) and select the one with _ProjectNameEditor Linux Development Build_
+# 2b. Or Build Project (VS Code)
+If you prefer building directly inside Visual Studio Code:
 
-## 4. Run the Project
-Finally run the project with
+Open the project folder in VS Code.
+
+Press Ctrl+Shift+B to open the Build Tasks.
+
+Select the task:
+
+ProjectNameEditor Linux Development Build (e.g., testcppEditor Linux Development Build)
+
+# 4. Run Project
+Launch the Unreal Editor with your specific project loaded.
+
 ```
 /mnt/data/UE4.27/Engine/Binaries/Linux/UE4Editor ~/Documents/testcpp/testcpp.uproject
 ```
+
